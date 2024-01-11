@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - develop
       - main
@@ -31,8 +31,12 @@ jobs:
       - name: Run Tests
         run: npm run test
 
+  report-coverage:
+    runs-on: ubuntu-latest
+    needs: test
+    if: always() # Also generate the report if tests are failing
+    steps:
       - name: Report Coverage
-        if: always() # Also generate the report if tests are failing
         uses: romeovs/lcov-reporter-action@v0.3.1
         with:
           lcov-file: ./coverage/lcov.info
