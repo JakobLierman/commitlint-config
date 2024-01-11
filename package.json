@@ -1,0 +1,62 @@
+{
+  "name": "@jakoblierman/commitlint-config",
+  "version": "0.0.0",
+  "description": "Commit lint configuration",
+  "author": {
+    "name": "Jakob Lierman",
+    "email": "jakob.lierman@gmail.com",
+    "url": "https://jakoblierman.be"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakobLierman/commitlint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JakobLierman/commitlint-config/issues"
+  },
+  "keywords": [
+    "conventional-changelog",
+    "commitlint",
+    "commitlint-config"
+  ],
+  "engines": {
+    "node": ">=v20"
+  },
+  "publishConfig": {
+    "@jakoblierman:registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "jest",
+    "release": "release-it",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^18.4.4"
+  },
+  "peerDependencies": {
+    "@commitlint/cli": "^18.4.4"
+  },
+  "devDependencies": {
+    "@commitlint/lint": "^18.4.4",
+    "@commitlint/load": "^18.4.4",
+    "@commitlint/types": "^18.4.4",
+    "@jakoblierman/eslint-config": "^0.0.1",
+    "@jakoblierman/prettier-config": "^0.0.1",
+    "@jest/globals": "^29.7.0",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "latest",
+    "release-it": "^17.0.1"
+  },
+  "license": "MIT"
+}
