@@ -1,6 +1,6 @@
 {
   "name": "@jakoblierman/commitlint-config",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Commit lint configuration",
   "author": {
     "name": "Jakob Lierman",
@@ -26,7 +26,8 @@
     "commitlint.config.js"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^18.4.4"
@@ -37,7 +38,9 @@
     "@commitlint/load": "^18.4.4",
     "@commitlint/types": "^18.4.4",
     "@jest/globals": "^29.7.0",
+    "@release-it/conventional-changelog": "^8.0.1",
     "husky": "^8.0.3",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "release-it": "^17.0.1"
   }
 }
