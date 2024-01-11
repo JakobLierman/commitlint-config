@@ -9,6 +9,17 @@ describe('Commitlint Configuration', () => {
 	 */
 	let commitlintConfig;
 
+	/**
+	 * Lint commit message with commitlint configuration.
+	 * @param {string} message Commit message to lint
+	 * @returns {Promise<import('@commitlint/types').LintOutcome>}
+	 */
+	const lintWithConfig = (message) => {
+		return lint(message, commitlintConfig.rules, {
+			parserOpts: commitlintConfig.parserPreset.parserOpts,
+		});
+	};
+
 	beforeAll(async () => {
 		commitlintConfig = await load({}, { cwd: process.cwd(), file: 'commitlint.config.js' });
 	});
@@ -22,87 +33,80 @@ describe('Commitlint Configuration', () => {
 	});
 
 	test('Should pass linting with valid feat commit message', async () => {
-		const result = await lint('feat: add new feature', commitlintConfig.rules);
+		const result = await lintWithConfig('feat: add new feature');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid fix commit message', async () => {
-		const result = await lint('fix: resolve a bug', commitlintConfig.rules);
+		const result = await lintWithConfig('fix: resolve a bug');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid chore commit message', async () => {
-		const result = await lint('chore: update dependencies', commitlintConfig.rules);
+		const result = await lintWithConfig('chore: update dependencies');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should fail linting with missing type in commit message', async () => {
-		const result = await lint('missing type', commitlintConfig.rules);
+		const result = await lintWithConfig('missing type');
 		expect(result).toHaveProperty('valid', false);
 	});
 
 	test('Should fail linting with invalid type in commit message', async () => {
-		const result = await lint('invalid-type: fix something', commitlintConfig.rules);
+		const result = await lintWithConfig('invalid-type: fix something');
 		expect(result).toHaveProperty('valid', false);
 	});
 
 	test('Should fail linting with missing colon in commit message', async () => {
-		const result = await lint('missing colon', commitlintConfig.rules);
+		const result = await lintWithConfig('missing colon');
 		expect(result).toHaveProperty('valid', false);
 	});
 
 	// TODO: Fix this test case
-	// test('Should pass linting with breaking change', async () => {
-	// 	const result = await lint(
-	// 		'feat(api)!: add breaking new feature',
-	// 		commitlintConfig.rules,
-	// 	);
-	// 	expect(result).toHaveProperty('valid', true);
-	// });
+	test('Should pass linting with breaking change', async () => {
+		const result = await lintWithConfig('feat(api)!: add breaking new feature');
+		expect(result).toHaveProperty('valid', true);
+	});
 
 	test('Should pass linting with breaking change in commit footer', async () => {
-		const result = await lint(
+		const result = await lintWithConfig(
 			'feat: add amazing new feature\n\nBREAKING CHANGE: it breaks something',
-			commitlintConfig.rules,
 		);
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should fail linting with invalid breaking change format', async () => {
-		const result = await lint('feat!(scope): add new feature', commitlintConfig.rules);
+		const result = await lintWithConfig('feat!(scope): add new feature');
 		expect(result).toHaveProperty('valid', false);
 	});
 
 	test('Should pass linting with multiple lines', async () => {
-		const result = await lint(
-			'feat: add new feature\nMore detailed description',
-			commitlintConfig.rules,
-		);
+		const result = await lintWithConfig('feat: add new feature\nMore detailed description');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid test commit message', async () => {
-		const result = await lint('test: add unit tests', commitlintConfig.rules);
+		const result = await lintWithConfig('test: add unit tests');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid docs commit message', async () => {
-		const result = await lint('docs: update documentation', commitlintConfig.rules);
+		const result = await lintWithConfig('docs: update documentation');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid style commit message', async () => {
-		const result = await lint('style: fix code style issues', commitlintConfig.rules);
+		const result = await lintWithConfig('style: fix code style issues');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with valid refactor commit message', async () => {
-		const result = await lint('refactor: refactor code', commitlintConfig.rules);
+		const result = await lintWithConfig('refactor: refactor code');
 		expect(result).toHaveProperty('valid', true);
 	});
 
 	test('Should pass linting with multi-paragraph body and multiple footers', async () => {
-		const result = await lint('fix: prevent racing of requests\n' +
+		const result = await lintWithConfig('fix: prevent racing of requests\n' +
 			'\n' +
 			'Introduce a request id and a reference to latest request. Dismiss\n' +
 			'incoming responses other than from latest request.\n' +
@@ -111,7 +115,8 @@ describe('Commitlint Configuration', () => {
 			'obsolete now.\n' +
 			'\n' +
 			'Reviewed-by: Z\n' +
-			'Refs: #123', commitlintConfig.rules);
+			'Refs: #123',
+		);
 		expect(result).toHaveProperty('valid', true);
 	});
 
