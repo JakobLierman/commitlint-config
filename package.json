@@ -1,0 +1,43 @@
+{
+  "name": "@jakoblierman/commitlint-config",
+  "version": "0.1.0",
+  "description": "Commit lint configuration",
+  "author": {
+    "name": "Jakob Lierman",
+    "email": "jakob.lierman@gmail.com",
+    "url": "https://jakoblierman.be"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JakobLierman/commitlint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JakobLierman/commitlint-config/issues"
+  },
+  "keywords": [
+    "conventional-changelog",
+    "commitlint",
+    "commitlint-config"
+  ],
+  "engines": {
+    "node": ">=v20"
+  },
+  "files": [
+    "commitlint.config.js"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^18.4.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/lint": "^18.4.4",
+    "@commitlint/load": "^18.4.4",
+    "@commitlint/types": "^18.4.4",
+    "@jest/globals": "^29.7.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0"
+  }
+}
