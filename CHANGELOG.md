@@ -1,3 +1,13 @@
+## 1.0.0 (2024-01-22)
+
+### ⚠ BREAKING CHANGES
+
+- initial commit
+
+### Miscellaneous Chores
+
+- initial commit ([68057ab](https://github.com/JakobLierman/commitlint-config/commit/68057aba2038da8a476d56a4d00daecfbd6eb306))
+
 ## 1.0.0 (2024-01-14)
 
 ### ⚠ BREAKING CHANGES
