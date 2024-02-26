@@ -27,8 +27,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm ci
 
-      - name: Check code style
-        run: npm run lint
-
       - name: Run Tests
         run: npm run test

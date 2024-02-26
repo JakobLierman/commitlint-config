@@ -20,10 +20,7 @@
     "commitlint-config"
   ],
   "engines": {
-    "node": ">=v20"
-  },
-  "publishConfig": {
-    "@jakoblierman:registry": "https://npm.pkg.github.com"
+    "node": ">=20"
   },
   "files": [
     "index.js"
@@ -32,29 +29,30 @@
   "scripts": {
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "test": "jest",
+    "test": "vitest",
     "release": "release-it",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^18.4.4"
+    "@commitlint/config-conventional": "^18.6.2"
   },
   "peerDependencies": {
-    "@commitlint/cli": "^18.4.4"
+    "@commitlint/cli": "^18.6.1"
   },
   "devDependencies": {
-    "@commitlint/lint": "^18.4.4",
-    "@commitlint/load": "^18.4.4",
-    "@commitlint/types": "^18.4.4",
-    "@jakoblierman/eslint-config": "^0.0.1",
-    "@jest/globals": "^29.7.0",
+    "@commitlint/lint": "^18.6.1",
+    "@commitlint/load": "^18.6.1",
+    "@commitlint/types": "^18.6.1",
     "@jakoblierman/prettier-config": "^0.1.1",
     "@release-it/conventional-changelog": "^8.0.1",
-    "eslint": "^8.56.0",
-    "husky": "^8.0.3",
-    "jest": "^29.7.0",
+    "@vitest/coverage-v8": "^1.3.1",
+    "husky": "^9.0.11",
     "lint-staged": "latest",
-    "release-it": "^17.0.1"
+    "release-it": "^17.1.1",
+    "ts-essentials": "^9.4.1",
+    "vitest": "^1.3.1",
+    "vitest-github-actions-reporter": "^0.11.1",
+    "vitest-github-actions-summary-reporter": "^0.1.1"
   },
   "license": "MIT"
 }

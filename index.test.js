@@ -1,6 +1,6 @@
-const { describe, beforeAll, test, expect } = require('@jest/globals');
-const load = require('@commitlint/load').default;
-const lint = require('@commitlint/lint').default;
+import { beforeAll, describe, expect, test } from 'vitest';
+import load from '@commitlint/load';
+import lint from '@commitlint/lint';
 
 describe('Commitlint Configuration', () => {
   /**
