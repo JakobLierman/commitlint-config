@@ -7,6 +7,9 @@
     "email": "jakob.lierman@gmail.com",
     "url": "https://jakoblierman.be"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JakobLierman/commitlint-config.git"
