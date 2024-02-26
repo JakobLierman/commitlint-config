@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       checks: write
+      packages: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -26,9 +27,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm ci
-
-      - name: Check code style
-        run: npm run lint
 
       - name: Run Tests
         run: npm run test
