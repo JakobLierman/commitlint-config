@@ -3,10 +3,12 @@
   "git": {
     "commitMessage": "chore(release): release v${version}",
     "tagAnnotation": "Release v${version}",
-    "tagName": "v${version}"
+    "tagName": "v${version}",
+    "requireBranch": "main",
+    "requireCommits": true
   },
   "npm": {
-    "publish": false
+    "publish": true
   },
   "github": {
     "release": true,
