@@ -28,7 +28,8 @@
   "files": [
     "index.js"
   ],
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
@@ -37,15 +38,15 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^18.6.2"
+    "@commitlint/config-conventional": "^19.0.3"
   },
   "peerDependencies": {
-    "@commitlint/cli": "^18.6.1"
+    "@commitlint/cli": "^19.0.3"
   },
   "devDependencies": {
-    "@commitlint/lint": "^18.6.1",
-    "@commitlint/load": "^18.6.1",
-    "@commitlint/types": "^18.6.1",
+    "@commitlint/lint": "^19.0.3",
+    "@commitlint/load": "^19.0.3",
+    "@commitlint/types": "^19.0.3",
     "@jakoblierman/prettier-config": "^0.1.1",
     "@release-it/conventional-changelog": "^8.0.1",
     "@vitest/coverage-v8": "^1.3.1",

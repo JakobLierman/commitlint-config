@@ -1,3 +1,3 @@
-const config = require('./index.js');
+import config from './index.js';
 
-module.exports = config;
+export default config;
