@@ -1,3 +1,13 @@
+## [2.0.0](https://github.com/JakobLierman/commitlint-config/compare/v1.0.1...v2.0.0) (2024-02-28)
+
+### ⚠ BREAKING CHANGES
+
+- move to esm only
+
+### Miscellaneous Chores
+
+- move to esm only ([fa01dc7](https://github.com/JakobLierman/commitlint-config/commit/fa01dc7e35f13848777f67fe8d5cfab2a3aa1d58))
+
 ## [1.0.1](https://github.com/JakobLierman/commitlint-config/compare/v1.0.0...v1.0.1) (2024-02-26)
 
 ## 1.0.0 (2024-01-22)
