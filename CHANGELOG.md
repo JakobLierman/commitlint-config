@@ -1,3 +1,11 @@
+# Changelog
+
+## <small>2.0.1 (2025-06-26)</small>
+
+- chore: upgrade husky ([9359abc](https://github.com/JakobLierman/commitlint-config/commit/9359abc))
+- chore: upgrade packages ([872b375](https://github.com/JakobLierman/commitlint-config/commit/872b375))
+- chore: vitest github reporter ([9aafdfa](https://github.com/JakobLierman/commitlint-config/commit/9aafdfa))
+
 ## [2.0.0](https://github.com/JakobLierman/commitlint-config/compare/v1.0.1...v2.0.0) (2024-02-28)
 
 ### ⚠ BREAKING CHANGES

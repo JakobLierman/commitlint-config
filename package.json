@@ -1,6 +1,6 @@
 {
   "name": "@jakoblierman/commitlint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Commit lint configuration",
   "author": {
     "name": "Jakob Lierman",
