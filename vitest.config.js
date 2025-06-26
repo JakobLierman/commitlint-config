@@ -1,15 +1,9 @@
 import { configDefaults, defineConfig } from 'vitest/config';
-import GithubActionsInlineReporter from 'vitest-github-actions-reporter';
-import { GithubActionsReporter } from 'vitest-github-actions-summary-reporter';
 
 export default defineConfig({
   test: {
     reporters: process.env.GITHUB_ACTIONS
-      ? [
-          'default',
-          new GithubActionsReporter(),
-          new GithubActionsInlineReporter(),
-        ]
+      ? [['default', { summary: false }], 'github-actions']
       : 'default',
     exclude: [...configDefaults.exclude, '**/e2e/**'],
     env: {
